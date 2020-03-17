@@ -1,0 +1,45 @@
+<div ng-cloak>
+
+    <a href="{{vm.repository.url}}">
+        <img class="fork-me hidden-xs" alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
+    </a>
+
+    <nav class="navbar navbar-demo">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" ng-click="vm.collapse = !vm.collapse" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">{{::vm.name | titlecase}}</a>
+            </div>
+            <div class="navbar-collapse collapse" ng-class="{in : vm.collapse}">
+                <ul class="nav navbar-nav">
+                    <li ng-repeat="menu in vm.tabs" ng-class="{active: $index === vm.active}">
+                        <a href="#{{menu.title | hypercase}}" ng-click="vm.active = $index;">{{menu.title}}</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right visible-xs">
+                    <li><a href="{{::vm.repository.url}}">Github</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right hidden-xs">
+                    <li><a href="#">{{vm.version}}</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container container-demo" fit-window ng-click="vm.collapse = false;">
+        <ng-include src="vm.tabs[vm.active].template"></ng-include>
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <strong>{{::vm.author}}</strong> All rights reserved.
+        </div>
+    </footer>
+
+</div>

@@ -1,0 +1,14 @@
+# bower node typings
+bower_components
+node_modules
+typings
+
+# editors
+.vscode
+jsconfig.json
+
+# temp
+*.log
+temp
+.temp
+.gh-pages

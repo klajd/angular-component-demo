@@ -1,0 +1,43 @@
+{
+  "name": "angular-component-demo",
+  "description": "An angular 1.x template for developing demo example for angular libraries.",
+  "main": [
+    "dist/angular-component-demo.js",
+    "dist/angular-component-demo.css"
+  ],
+  "authors": [
+    "Klajd Diko"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "component",
+    "demo",
+    "theme"
+  ],
+  "homepage": "https://github.com/klajd/angular-component-demo",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css"
+      ],
+      "dependencies": {}
+    },
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.css"
+      ]
+    }
+  }
+}
